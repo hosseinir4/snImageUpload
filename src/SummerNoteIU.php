@@ -21,7 +21,7 @@ class SummerNoteIU
                 if(!is_dir($dir)){
                     mkdir($dir);
                 }
-                file_put_contents($dir.$image_name, $imgeData);
+                file_put_contents($image_name, $imgeData);
                 $image->removeAttribute('src');
                 $image->setAttribute('src', $dir.$image_name);
             }
