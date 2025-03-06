@@ -21,7 +21,7 @@ class SummerNoteIU
                 $url = $protocol . $_SERVER['HTTP_HOST'];
                 $dir = $_SERVER['DOCUMENT_ROOT']. DIRECTORY_SEPARATOR .$folder;
                 $image_dir = $dir. DIRECTORY_SEPARATOR . $image_name;
-                $image_url = $url.DIRECTORY_SEPARATOR.$folder. DIRECTORY_SEPARATOR .$image_name;
+                $image_url = $url.'/'.$folder. DIRECTORY_SEPARATOR .$image_name;
                 if(!is_dir($dir)){
                     mkdir($dir);
                 }
