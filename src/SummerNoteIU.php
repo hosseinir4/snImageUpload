@@ -4,7 +4,7 @@ namespace SummerNoteIU;
 
 class SummerNoteIU
 {
-    public static function imageUpload($image,$dir,$url)
+    public static function imageUpload($image,$folder)
     {
         $dom = new \DomDocument();
         @$dom->loadHtml('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' .$image);
@@ -17,8 +17,11 @@ class SummerNoteIU
                 list(, $data) = explode(',', $data);
                 $imgeData = base64_decode($data);
                 $image_name = time() . $item . '.png';
+                $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+                $url = $protocol . $_SERVER['HTTP_HOST'];
+                $dir = $_SERVER['DOCUMENT_ROOT']. DIRECTORY_SEPARATOR .$folder;
                 $image_dir = $dir. DIRECTORY_SEPARATOR . $image_name;
-                $image_url = $url.DIRECTORY_SEPARATOR.$image_name;
+                $image_url = $url.DIRECTORY_SEPARATOR.$folder. DIRECTORY_SEPARATOR .$image_name;
                 if(!is_dir($dir)){
                     mkdir($dir);
                 }
