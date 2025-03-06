@@ -1,4 +1,4 @@
-# Project Title
+# snImageUpload
 
 Simple helper to use summer note image upload!
 
