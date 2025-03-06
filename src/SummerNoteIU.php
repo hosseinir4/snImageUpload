@@ -17,13 +17,12 @@ class SummerNoteIU
                 list(, $data) = explode(',', $data);
                 $imgeData = base64_decode($data);
                 $image_url = $dir. DIRECTORY_SEPARATOR . time() . $item . '.png';
-                $image_name = DIRECTORY_SEPARATOR . $image_url;
                 if(!is_dir($dir)){
                     mkdir($dir);
                 }
-                file_put_contents($image_name, $imgeData);
+                file_put_contents($image_url, $imgeData);
                 $image->removeAttribute('src');
-                $image->setAttribute('src', $dir.$image_name);
+                $image->setAttribute('src', $image_url);
             }
         }
         $res = $dom->saveHTML();
