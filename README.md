@@ -14,7 +14,7 @@ composer require hosseinir4/sn-image-upload
 
 simple using example
 
-```
+```php
 use SummerNoteIU\SummerNoteIU;
 
 $textWithImage = SummerNoteIU::imageUpload($input['textEditorData'],'folderNameToSaveImages');
