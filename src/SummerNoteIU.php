@@ -4,7 +4,7 @@ namespace SummerNoteIU;
 
 class SummerNoteIU
 {
-    public function imageUpload($image,$dir)
+    public static function imageUpload($image,$dir)
     {
         $dom = new \DomDocument();
         @$dom->loadHtml('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' .$image);
