@@ -18,7 +18,7 @@ class SummerNoteIU
                 $imgeData = base64_decode($data);
                 $image_name = time() . $item . '.png';
                 $image_dir = $dir. DIRECTORY_SEPARATOR . $image_name;
-                $image_url = $url.'/'.$image_name;
+                $image_url = $url.DIRECTORY_SEPARATOR.$image_name;
                 if(!is_dir($dir)){
                     mkdir($dir);
                 }
